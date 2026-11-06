@@ -21,3 +21,72 @@ Supporting behavior: Dispatch teams use calls, texts, and WhatsApp to coordinate
 
 This supports the core frustration: coordinators must manually establish what is happening rather than trust the dashboard. This is summarized evidence, not a verbatim interview quote.
 - **Your journey map, a shareable link, or the map file you committed (e.g. journey-map.html):** <img width="1548" height="1038" alt="image" src="https://github.com/user-attachments/assets/56f4627a-d320-4fc4-9f1a-c8ad86578f73" />
+
+# Persona & Future-State Journey, Module 2
+
+- **Scenario:** RouteLogic Velocity (B2B)
+
+## Persona
+- **Role:** Frontline Dispatcher Coordinates daily deliveries, manages route changes, and monitors driver progress.
+- **Goal:** Keep deliveries moving with an accurate view of field activity, without chasing updates across multiple channels.
+- **Friction:** Driver status updates lag 20–60 minutes, while reassignments take 8–15 minutes to reach drivers, forcing the coordinator to use calls, texts, and WhatsApp to establish what is happening and communicate current instructions.
+
+## Current workaround (the status quo to beat)
+- **External tools:** WhatsApp groups: Coordinate deliveries, share route changes, and get driver updates outside Velocity.
+Text messaging (SMS): Send urgent instructions and confirm delivery status when app updates are delayed.
+Phone calls: Contact drivers directly to verify their location, completed stops, and receipt of reassignments.
+- **The process:** Check Velocity for delivery progress and identify statuses or assignments that may be outdated.
+Call or message drivers through SMS or WhatsApp to confirm completed stops and current route progress.
+Relay route changes directly rather than wait for reassignments to appear in the app.
+Chase acknowledgment to confirm drivers received the changes and know which instructions to follow.
+Reconcile driver responses with Velocity as delayed updates arrive, checking for conflicting information.
+- **Core frustration:** Core frustration: The coordinator needs to act on a route change but cannot trust the dashboard or confirm that the driver received the reassignment. They must leave Velocity, call or message the driver, and chase acknowledgment before they can confidently move forward.
+
+The broken moment: The system meant to coordinate deliveries becomes another source of uncertainty the coordinator must manually resolve.
+- **The evidence:** Evidence from the supplied research summary: Dispatch reassignments take 8–15 minutes to reach drivers with no push notification, while driver status updates lag 20–60 minutes, leaving completed stops marked “in progress.”
+
+Supporting behavior: Dispatch teams use calls, texts, and WhatsApp to coordinate outside Velocity because platform updates do not reliably reflect field activity.
+
+This supports the core frustration: coordinators must manually establish what is happening rather than trust the dashboard. This is summarized evidence, not a verbatim interview quote.
+
+## Future-state journey map
+1. Start the Day
+
+View current routes and status → Prioritize work without chasing drivers.
+
+User action: Review routes, status freshness, and exceptions in Velocity.
+Internal state: Informed and ready to act.
+Pain point addressed: Uncertainty caused by outdated dashboard information.
+2. Manage Changes
+
+Reassign a stop and track acknowledgment → Know the driver received the current instruction.
+
+User action: Send a reassignment and check receipt and acknowledgment.
+Internal state: Assured about the next step.
+Pain point addressed: Delayed reassignments and follow-up calls, texts, or WhatsApp messages.
+3. Monitor Progress
+
+Review timely delivery updates → Coordinate next steps without repeated status checks.
+
+User action: Monitor completed stops and investigate clearly flagged stale updates.
+Internal state: Confident about what is known and what needs attention.
+Pain point addressed: Status lags that force manual verification with drivers.
+4. Close the Day
+
+Review completed routes and outstanding exceptions → Finish without reconciling scattered messages.
+
+User action: Confirm route outcomes and resolve outstanding items in one place.
+Internal state: Clear about completed work and remaining follow-up.
+Pain point addressed: Duplicate reconciliation across Velocity, calls, texts, and WhatsApp.
+
+Design emphasis: Simpler workflows must be paired with reliable updates and visible acknowledgment, not merely fewer clicks.
+
+## Competitive advantages
+These three proposed advantages give coordinators a practical reason to replace calls, texts, and WhatsApp with Velocity:
+
+Faster coordination: Send route changes and track acknowledgment in one workflow, without chasing drivers across channels.
+Trustworthy visibility: See current delivery statuses and clearly flagged delays, without calling to establish what happened.
+Less duplicate work: Keep instructions, confirmations, and exceptions together, without reconciling scattered messages at day’s end.
+
+Why users would switch: Velocity must make coordination faster and more dependable than the workaround, not simply move messaging inside the app.
+
