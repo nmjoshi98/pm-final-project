@@ -1,66 +1,117 @@
-# Roadmap, PRD & Prototype (Module 4)
+# One-Click Compliance Checklist, Simplified PRD (RouteLogic)
 
-## Your strategic anchors
-- **Persona (M2), who are you solving for?:** Frontline Dispatcher / Logistics Coordinator responsible for daily deliveries, route changes, and driver progress, who needs to complete essential coordination and compliance tasks efficiently within Velocity rather than relying on manual workarounds.
-- **Primary success metric (M3), your leading indicator:** Primary success metric (M3): Average daily minutes coordinators spend on manual workarounds.
+**Author:** Me · **Status:** Draft · **Target:** High-Fidelity Prototype · **Persona:** Frontline Dispatcher / Logistics Coordinator who coordinates daily deliveries, manages route changes, monitors driver progress, and completes required compliance workflows.
 
-Target: Approximately 20% reduction, from 31 minutes to 25 minutes or less per coordinator per day, indicating that essential work is moving back into Velocity.
-- **Moment of misery (M2), the specific friction blocking the goal:** Moment of misery (M2): The coordinator needs to act on a route change but cannot trust Velocity’s dashboard or confirm the driver received it, forcing calls, texts, and WhatsApp messages to establish what happened and what should happen next.
-- **Guardrail metric (M3), what must not drop or break:** Guardrail metric (M3): Manager Reporting CSAT must remain at or above 4.5/5, ensuring that reducing frontline compliance friction does not weaken the reporting capabilities existing enterprise customers rely on.
+## 1. The Big Picture
+- **Vision:** One-Click Compliance Checklist enables frontline coordinators to complete required compliance work accurately, confidently, and in minutes rather than through a 14.6-minute manual process.
+- **Press release:** Option 1: Outcome-focused
 
-## Scan the backlog & set a human baseline
-- **My instinctive “quick wins” before touching the AI (2 to 3 feature IDs + why):** My instinctive quick-win candidates for RouteLogic Velocity would be:
+RouteLogic Velocity introduces One-Click Compliance Checklist, giving frontline dispatchers and logistics coordinators a faster way to complete required compliance work without navigating a lengthy manual process. Known driver, route, and fleet information is pre-filled so coordinators can review what matters, resolve missing information, and submit with confidence.
 
-B1 · One-Click Compliance Checklist: Directly targets the biggest measured bottleneck: 14.6 minutes versus a 3-minute benchmark. A narrowly scoped pre-filled form could reduce repetitive work while preserving required checks.
-B3 · Shift Handoff Wizard: Targets the 6.8-minute gap versus benchmark, helping coordinators finish handoffs within Velocity rather than manually reconstructing information.
-B6 · Driver Alert Notifications: Addresses my M2 frustration by making route changes visible to drivers, potentially reducing follow-up calls and texts. Alerts alone will not fix synchronization delays or prove acknowledgment.
+Today, compliance takes 14.6 minutes compared with a 3-minute benchmark. The new experience is designed to give that time back to coordinators, reducing administrative burden so they can focus on keeping deliveries moving instead of working around Velocity.
 
-Baseline rationale: These target wasted time and manual coordination, not feature expansion. They are quick-win candidates, not confirmed low-effort work; engineering estimates must establish feasibility for the 4-week, 3-account pilot.
+Option 2: More punchy
 
-## Audit, override & decide
-- **Where did you override the AI? (feature + old vs. new score + why):** The original AI scores were not provided, so these are priority overrides, not verified numeric changes:
+Compliance should not slow down the operation. One-Click Compliance Checklist transforms a 14.6-minute workflow into a streamlined review-and-submit experience, using information Velocity already knows while keeping required validation and coordinator oversight intact.
 
-B1 · Compliance Checklist: Quick-win candidate → Now, Value 5 / Effort 3. Targets the 14.6-minute bottleneck, but pre-filling and validation make low effort uncertain.
-B3 · Shift Handoff Wizard: Quick-win candidate → Next, Value 4 / Effort 3. Addresses the 6.8-minute benchmark gap, but would split capacity during the four-week compliance pilot.
-B6 · Driver Alerts: Quick-win candidate → Later, Value 3 / Effort 3. Notifications alone do not fix synchronization delays and are less directly aligned with cutting compliance friction.
+The goal is simple: less time completing compliance paperwork, fewer manual workarounds, and more time managing the fleet.
 
-Main correction: Strong user value does not automatically mean low effort or immediate priority.
-- **Did the AI over-value a Sales/Eng request your M2 interviews don’t support?:** Yes, potentially B8 · Fleet Analytics Manager View. It is a Sales-originated request, but our M2 research centers on frontline coordinators struggling with slow, manual daily workflows, not a lack of executive analytics.
+Writing approach
 
-I would lower B8’s Value score because it:
+I’d use Option 2 in the PRD because it leads with the pain, makes the value immediately clear, and avoids promising a specific future completion time before the pilot proves it.
+- **Success metric:** Primary success metric: Reduce the average time coordinators spend completing the compliance checklist, from 14.6 minutes toward the 3-minute benchmark during the pilot.
+- **Guardrail:** Compliance accuracy/completeness must not decline from baseline, with no increase in incomplete, invalid, or incorrectly submitted mandatory compliance checks during the pilot.
 
-Does not reduce the 31 minutes/day spent on manual workarounds.
-Does not address the coordinator’s moment of misery.
-Adds more administrative capability when our strategy is to restore frontline simplicity.
-Serves managers, while the pilot goal is specifically to cut coordinator compliance friction.
+## 2. The Details
+### User stories
+- As a Frontline Dispatcher / Logistics Coordinator, I want compliance data pre-filled from existing route and driver records so that I avoid repetitive manual entry.
+- As a Frontline Dispatcher / Logistics Coordinator, I want to review and correct pre-filled information so that I remain accountable for compliance accuracy.
+- As a Frontline Dispatcher / Logistics Coordinator, I want missing or invalid required fields clearly flagged so that I can resolve issues quickly.
+- As a Frontline Dispatcher / Logistics Coordinator, I want the system to prevent incomplete submissions so that mandatory compliance requirements are not missed.
+- As a Frontline Dispatcher / Logistics Coordinator, I want to submit the validated checklist in one clear action so that compliance takes minutes instead of a 14.6-minute manual process.
+- As a Frontline Dispatcher / Logistics Coordinator, I want immediate confirmation that my checklist was successfully saved so that I do not repeat work or question its status.
+- As a Frontline Dispatcher / Logistics Coordinator, I want each submission timestamped with the submitter recorded so that completed compliance work remains traceable.
+### Screens to build
+- Entry Point: Compliance Queue
+- Coordinator sees today’s routes, compliance status, and a clear “Complete Checklist” action for items requiring attention.
+- Feature Core: One-Click Compliance Checklist
+- Pre-filled driver/route data, required checks, editable fields, validation flags, and one clear “Review & Submit” action.
+- Success / Confirmation: Compliance Complete
+- Show “Checklist Submitted”, completion status, timestamp, submitter, and a “Return to Fleet View” action.
+### Functional requirements
+- Pre-fill: System must automatically populate available driver, route, and fleet compliance data when the checklist opens.
+- Edit: Coordinator must be able to review and modify all editable pre-filled values before submission.
+- Required fields: Every mandatory compliance field must be clearly identified before submission.
+- Validation: System must prevent submission when any mandatory field is missing or invalid and identify the field requiring correction.
+- Submission: Coordinator must be able to submit a valid checklist through one clear final action without navigating to another screen.
+- Persistence: Successful submission must save the checklist and immediately update its status to Completed in Velocity.
+- Traceability: Every successful submission must record the submitter and submission timestamp.
+- Confirmation: System must display an explicit success or failure message immediately after the submission attempt.
+### Smart behaviors (Situation → Outcome)
+- If driver, route, or fleet data already exists, then pre-fill the matching compliance fields automatically.
+- If required data is missing or invalid, then highlight the affected field and prevent submission.
+- If the coordinator edits pre-filled information, then use the updated value for validation and submission.
+- If all mandatory checks are valid, then enable the final Submit Checklist action.
+- If any mandatory check is incomplete, then keep submission disabled and identify what must be resolved.
+- If submission succeeds, then mark the checklist Completed and record the submitter and timestamp.
+- If submission fails, then preserve entered information and show a clear retry message without creating a duplicate record.
+- If the checklist is already completed, then show its completed status rather than prompting the coordinator to submit it again.
+### Technical constraints
+- Build as a front-end prototype only using React.
+- Use local component state (useState) only for checklist data and screen transitions.
+- No backend APIs or external service integrations.
+- No database or persistent cloud storage.
+- Use mock driver, route, fleet, and compliance data for pre-filled fields.
+- Do not implement authentication, permissions, or role management.
+- Do not build AI recommendations, risk scoring, analytics, exports, or third-party compliance integrations.
+- Keep the prototype to exactly 3 screens: Compliance Queue → Checklist → Confirmation.
+- Simulate validation, submission success/failure, timestamps, and completion status entirely in the browser.
+- Refreshing the prototype may reset all data. Persistent storage is out of scope.
 
-Decision: Put B8 in Later/Cut for this 4-week pilot, even if Sales considers it important.
-- **Did it underweight something your M3 cohort/funnel data strongly supports?:** Yes. B1 · One-Click Compliance Checklist is the strongest example of something the AI could underweight relative to the M3 evidence.
+## 3. The Logistics
+### Features out
+- AI-generated compliance recommendations or risk scoring
+- Compliance audit PDF/export functionality
+- Manager or executive analytics dashboards
+- Predictive ETA or route-optimization enhancements
+- New coordinator training or onboarding modules
+- Account-specific customizable compliance workflows
+- New third-party compliance or regulatory integrations
+- Bulk editing or bulk submission of compliance checklists
+- Automated compliance decisions without coordinator review
+- Broader RouteLogic Velocity dashboard redesign
+### Edge cases & safety guard
+- Edge cases & safety guard
+- Missing pre-fill data → Leave the field blank, flag it clearly, and require coordinator input before submission.
+- Invalid or conflicting data → Highlight the affected field and block submission until corrected.
+- Submission fails → Preserve all entered data, show a clear error, and allow retry without creating a duplicate.
+- Checklist already completed → Show completion status and prevent accidental duplicate submission.
+- Coordinator changes pre-filled data → Validate the edited value and use the coordinator-confirmed value for submission.
+- User attempts to leave before completing → Warn that unsaved work may be lost.
+- Required compliance check fails → Require explicit resolution or documented exception before allowing completion.
+- Repeated clicks on Submit → Accept only one submission and disable the action while processing.
+- It must NEVER
+- Never auto-submit a compliance checklist without coordinator review.
+- Never mark incomplete or invalid compliance requirements as completed.
+- Never silently overwrite coordinator-entered information with pre-filled data.
+- Never hide validation errors or represent a failed submission as successful.
+- Never create duplicate compliance records from repeated submission attempts.
+- Never generate or infer compliance answers when source data is missing.
+- Never sacrifice compliance completeness or accuracy merely to reduce completion time.
+### Decision log
+- Keep the first release to exactly three screens: Compliance Queue → Checklist → Confirmation. Broader dashboard redesign, onboarding, analytics, and exports stay out to protect the 4-week pilot.
+- Require coordinator review before submission: Pre-filled data can reduce the 14.6-minute compliance workflow, but Velocity will never auto-submit or make compliance decisions automatically, protecting compliance accuracy while testing speed improvements.
+### Evals
+- Accuracy: ≥99% of submitted checklists contain all required fields with valid compliance data.
+- Time-on-task: Reduce average checklist completion time from 14.6 minutes to ≤5 minutes during the pilot.
+- Safety: 100% of incomplete or invalid checklists are blocked from submission, with 0 auto-submissions and 0 duplicate submissions.
+- These are proposed pilot targets. The 5-minute target is deliberately achievable while still moving meaningfully toward the 3-minute benchmark.
 
-Why: Compliance takes 14.6 minutes versus a 3-minute benchmark, the largest measured time gap in the workflow.
-Coordinator Compliance CSAT is only 2.2/5, reinforcing that this is a meaningful frontline pain point.
-It directly supports the pilot goal of cutting compliance friction and should contribute to reducing the 31 minutes/day spent on manual workarounds.
+## MoSCoW scope
+- **Must:** Pre-fill known compliance data from existing route and driver records.; Allow coordinators to review and edit pre-filled compliance fields before submission.; Clearly flag missing or invalid required compliance fields.; Require confirmation of all mandatory checks before submission.; Submit the completed checklist and save its completion status in Velocity.; Preserve a timestamped record of who submitted the checklist and when.
+- **Should:** Auto-save checklist progress so coordinators can resume without losing work.; Show a clear completion confirmation after successful submission.; Display checklist completion status in the coordinator’s fleet view.; Allow coordinators to add notes for compliance exceptions.; Warn coordinators when required compliance checks are approaching a deadline.
+- **Could:** Quick-complete shortcuts for common compliance responses.; Remember coordinator preferences for frequently used checklist options.; Add optional tooltips explaining unfamiliar compliance fields.; Allow coordinators to duplicate relevant notes from a previous checklist.; Add basic filtering for completed, pending, and overdue compliance checklists.
+- **Won't (now):** AI-generated compliance recommendations or risk scoring.; Compliance audit PDF/export functionality.; Manager or executive analytics dashboards.; Predictive ETA or route-optimization enhancements.; New coordinator training or onboarding modules.; Custom compliance workflow configuration by account.; Integrations with new external compliance or regulatory systems.; Bulk editing or bulk submission of multiple compliance checklists.
 
-My override: Raise B1 to Value = 5 and put it in Now. It has substantially stronger quantitative support than features such as AI ETAs or additional analytics.
-
-## Generate your interactive roadmap
-- **My “Now” lane (this sprint), the 2 to 3 quick wins I’ll build first:** B1 · One-Click Compliance Checklist
- Value 5 | Effort 3 | NOW
- Directly attacks the biggest measured bottleneck: 14.6 minutes vs. 3-minute benchmark.
-
-B3 · Shift Handoff Wizard
- Value 4 | Effort 3 | NOW
- Targets the 6.8-minute handoff time gap and helps keep coordinator work inside Velocity.
-
-B5 · Step Progress Indicator
- Value 3 | Effort 1 | NOW
- A genuinely lightweight complement that makes the simplified workflow easier to follow during the pilot.
-
-Why these three: With only 2 engineers + 1 designer + 1 CS lead and four weeks, I would concentrate the pilot on reducing compliance and workflow friction rather than adding AI, analytics, or other scope. B1 is the centerpiece; B3 and B5 support completion without turning the pilot into a major rebuild.
-- **What I cut, and the “no” I’m protecting the scope from:** B8 · Fleet Analytics Manager View: Cut from the pilot. It serves managers rather than the coordinator’s compliance friction and does not move the primary metric.
-B7 · Contextual AI ETA Display: Cut for now. Low frontline adoption and weak connection to the 31-minute manual-workaround problem.
-B9 · Compliance Audit Trail Export: Cut from this pilot. Useful for audit needs, but it does not reduce the coordinator’s 14.6-minute compliance workflow.
-The “no” I’m protecting
-
-No to adding more features just because Sales, Legal, or Engineering wants them. For this 4-week pilot, every “Now” item must reduce coordinator workflow friction and help cut the 31 minutes/day lost to manual workarounds without weakening reporting or compliance integrity.
-- **Prototype/roadmap screenshot link (paste into your deliverables):** <img width="1480" height="1205" alt="image" src="https://github.com/user-attachments/assets/e4be9ad6-75e4-4fda-a14c-0243e2521561" />
+---
+**Builder hook:** Build a working prototype based on this PRD. Use the User Story as the core flow, Functional Requirements as build constraints, and prioritize speed and clarity over visual complexity.
